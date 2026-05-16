@@ -8,6 +8,7 @@ peso = int(input("Escribe tu peso en kg "))
 altura = float(input("Escribe tu altura en metros "))
 print("Calculando imc...")
 #calcular el imc
+print("------Resultados------")
 imc = peso/altura**2
 if imc >= 30:
     print(nombre, apellidos, "tu imc es", imc, "y estás en la categoría de obesidad")

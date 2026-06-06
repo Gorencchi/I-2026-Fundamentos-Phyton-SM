@@ -21,4 +21,5 @@ while True:
         print(f"\tEstudiantes registrados:\n\t{archivo.read()}")
         archivo.close()
     if seleccion == 3:
+        print("Saliendo del programa")
         break

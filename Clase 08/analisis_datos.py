@@ -1,4 +1,4 @@
-import pandas
+import pandas #Se descargó la libreria con pip install pandas
 datos = pandas.read_csv("Clase 08/Estudiantes.csv")
 print(datos)
 print(datos.head())
@@ -15,7 +15,7 @@ print(datos['edad'].max)
 #calcular el minimo de la edad
 print(datos['edad'].min)
 
-#filtrar estudiantes con calificacion mayor
+#filtrar estudiantes con calificacion mayor a 85
 estudiantes_alta_nota = datos[datos['nota']>85]
 print(estudiantes_alta_nota)
 

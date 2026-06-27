@@ -24,37 +24,54 @@ def analizar_fort(password):
     else:
         return "Contraseña fuerte"
     
-def generar_hash(text, algorithm):
-    algorithm = algorithm.lower()
-    
-    if algorithm == "md5":
+def generar_hash(text, algoritmo):
+    algoritmo = algoritmo.lower()
+    if algoritmo == "md5":
         result = hashlib.md5(text.encode()).hexdigest()
-    elif algorithm == "sha1":
+    elif algoritmo == "sha1":
         result = hashlib.sha1(text.encode()).hexdigest()
-    elif algorithm == "sha256":
+    elif algoritmo == "sha256":
        result = hashlib.sha256(text.encode()).hexdigest()
-    elif algorithm == "sha512":
+    elif algoritmo == "sha512":
        result = hashlib.sha512(text.encode()).hexdigest()
     else:
         result = "Algoritmo no aceptado" 
         
     return result 
     
-def detectar_patrones():
-    pass
+def detectar_patrones(password):
+    patrones = ["123", "234", "345", "456", "567", "678", "789",
+                "abc", "bcd", "cde", "def", "efg", "fgh",
+                "aaa", "bbb", "ccc", "111", "222", "333",
+                "password", "admin", "qwerty", "letmein"]
+    for patron in patrones:
+        if patron in password:
+            return "Patrones detectados: " + patron
+    return "No hay patrones en su contraseña"
+        
 def listar_algoritmos():
-    pass
+    algoritmos = ["md5", "sha1", "sha256", "sha512"]
+    print("Available algorithms:")
+    for algoritmos in algoritmos:
+        print("- " + algoritmos)
 
 def validar_entrada(text):
     if text.strip() == "":
         return False 
     return True    
 
-def guardar_resultado():
-    pass
+def guardar_resultado(text):
+ archivo = open("C:\\Users\\Personas Invitadas\\Desktop\\I-2026-Fundamentos-Phyton-SM\\Clase 06\\resultado.txt", "a")
+ archivo.write(text + "\n")
+ archivo.close()
+ print ("Resultados guardados con exito")
 
-def generar_contraseña(length):
-    pass
+def generar_contrasenna(length):
+    caracteres = string.ascii_letters + string.digits + string.punctuation
+    contrasenna = ""
+    for i in range(length):
+        contrasenna += secrets.choice(caracteres)
+    return contrasenna
     
 def mostrar_menu():
     os.system("cls" if os.name == "nt" else "clear")
@@ -72,3 +89,6 @@ def mostrar_menu():
 mostrar_menu()
 print(generar_hash("olaa","sha512<"))
 print(analizar_fort("hola12345"))
+listar_algoritmos()
+print(generar_contrasenna(12)) 
+guardar_resultado("contrasenna: Xk9#mP2!")

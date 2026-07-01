@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import tkinter as tk
 from tkinter import messagebox
 from tkinter import ttk
@@ -149,3 +150,16 @@ label_result = tk.Label(result_frame, text="El resultado aparecerá aquí...", b
 label_result.pack(padx=10, pady=10, fill="both", expand=True)
 
 window.mainloop()
+=======
+import tkinter as ctk
+import customtkinter as CTk
+from funciones import *
+CTk.set_appearance_mode("System")
+##ventana principal
+ventana = CTk.CTk()
+ventana.geometry("300x400")
+
+##menu de opciones
+
+ventana.mainloop()
+>>>>>>> da12d3da251ce940fa28531e977de085cfa998cc

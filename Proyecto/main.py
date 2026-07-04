@@ -88,7 +88,7 @@ algo_menu.pack(side="left")
 buttons_frame = tk.Frame(window, bg="#121212")
 buttons_frame.pack(pady=15)
 
-def create_button(text, command):
+def boton(text, command):
     btn = tk.Button(buttons_frame, text=text, command=command, font=("Segoe UI", 11, "bold"),
                     bg="#1f1f1f", fg="#00FF66", activebackground="#00FF66", activeforeground="#121212",
                     bd=1, relief="groove", width=24, cursor="hand2")
@@ -96,10 +96,10 @@ def create_button(text, command):
     btn.bind("<Leave>", on_leave)
     return btn
 
-btn1 = create_button("Analizar Fortaleza", run_analizar_fort)
-btn2 = create_button("Detectar Patrones", run_detectar_patrones)
-btn3 = create_button("Generar Contraseña", run_generar_contrasenna)
-btn4 = create_button("Generar Hash", run_generar_hash)
+btn1 = boton("Analizar Fortaleza", run_analizar_fort)
+btn2 = boton("Detectar Patrones", run_detectar_patrones)
+btn3 = boton("Generar Contraseña", run_generar_contrasenna)
+btn4 = boton("Generar Hash", run_generar_hash)
 
 btn1.pack(pady=6, ipady=4)
 btn2.pack(pady=6, ipady=4)
@@ -116,7 +116,6 @@ btn_save.pack(pady=(12,4), ipady=4)
 
 result_frame = tk.Frame(window, bg="#2a2a2a", bd=2, relief="raised")
 result_frame.pack(pady=15, padx=20, fill="both", expand=True)
-label_result = tk.Label(result_frame, text="El resultado aparecerá aquí...", bg="#2a2a2a", fg="#00FF66", font=("Consolas", 11), wraplength=480, justify="center")
+label_result = tk.Label(result_frame, text="Resultado", bg="#2a2a2a", fg="#00FF66", font=("Consolas", 11), wraplength=480, justify="center")
 label_result.pack(padx=10, pady=10, fill="both", expand=True)
-
 window.mainloop()

@@ -3,26 +3,6 @@ from tkinter import messagebox
 from tkinter import ttk
 from funciones import *
 
-def validar_entrada(text):
-    return len(text.strip()) > 0
-
-def analizar_fort(password):
-    return "Fortaleza media"
-
-def detectar_patrones(password):
-    return "Patrones detectados: xxx"
-
-def generar_contrasenna(length):
-    return "Abc123!@#"[:length]  # Solo ejemplo
-
-def generar_hash(text, algoritmo):
-    return "abc123hash"
-
-def guardar_resultado(resultado):
-    with open("resultado.txt", "w") as f:
-        f.write(resultado)
-
-# Variables globales
 last_result = [""]
 def run_analizar_fort():
     password = entry_input.get()
